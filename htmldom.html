@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <title>DOM HTML</title>
+        <style>
+            body {
+                font-family: "Times New Roman", serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                
+                background-image:url(exe2\ \(15\).jpg);
+            }
+
+            .container {
+            
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgb(95, 44, 0);
+                padding: 30px;
+                width: 400px;
+                color: #ffecfb;
+            }
+
+            .header {
+                text-align: center;
+                margin-bottom: 30px;
+                color: #ffffff;
+                font-size: 25px;
+                }
+
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+            label alamat{
+                color: #721c24;
+            }
+
+            input[type="text"],
+            textarea,
+            select {
+                padding: 10px;
+                border: 1px solid #cccccc;
+                border-radius: 4px;
+                margin-bottom: 16px;
+            }
+            
+            button {
+                padding: 10px 20px;
+                background-color: #256803;
+                color: #ffffff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #ac770c;
+            }
+
+            .alert {
+                background-color: #f8d7da;
+                color: #721c24;
+                padding: 10px;
+                border-radius: 4px;
+                margin-bottom: 16px;
+            }
+            p{
+                font-size: 20px;
+                    
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h3>Pendaftaran Perjalanan ke Alaska</h3>
+            </div>
+            <form action="">
+                <label for="nama"><span style="border-bottom: 4px solid rgb(235, 198, 104);">Nama</span></label><br>
+                <input type="text" placeholder="Nama Anda" id="nama"><br><br>
+                <label for="tanggal"><span style="border-bottom: 4px solid rgb(235, 198, 104);">Tanggal</span></label><br>
+                <input type="date" id="tanggal" value="<?= (new DateTime())->format('Y-m-d') ?>"><br><br>
+                <label for="tahun"><span style="border-bottom: 4px solid rgb(235, 198, 104);">Kapan Ingin Berangkat?</span></label><br>
+                <select id="tahun">
+                <option value="2021">2022</option>
+                <option value="2022">2024</option>
+                <option value="2023">2026</option>
+                </select><br><br>
+                <p><span style="border-bottom: 4px solid rgb(235, 198, 104);">Keahlian:</span></p>
+                <input type="radio" name="Keahlian" id="memanjat" value="memanjat">
+                <label for="memanjat">Memanjat tebing</label><br>
+                <input type="radio" name="Keahlian" id="mendayung" value="mendayung">
+                <label for="mendayung">Mendayung</label><br>
+                <input type="radio" name="Keahlian" id="terjun payung" value="terjun payung">
+                <label for="terjun payung">Terjun payung</label><br>
+                <input type="radio" name="Keahlian" id="pemula" value="pemula">
+                <label for="pemula">Pemula</label><br><br>
+
+                <label for="email"><span style="border-bottom: 4px solid rgb(235, 198, 104);">Email</span></label><br>
+                <input type="text" placeholder="Email Anda" id="email"><br>
+                
+                <label for=""><span style="border-bottom: 4px solid rgb(235, 198, 104);">Alamat</span></label><br>
+                <textarea placeholder="Tulis alamatmu disini" name="alamat" id="alamat" cols="30" rows="5"></textarea><br><br>
+                <button type="submit" onclick="kirimData()">kirim</button>
+            </form>
+        </div>
+        <script src="js.js"></script>
+    </body>
+</html>
